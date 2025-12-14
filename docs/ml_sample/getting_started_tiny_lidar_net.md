@@ -164,6 +164,7 @@ TinyLiDARNetは、コース上での走行は可能ですが、Pitlaneのよう�
 ### アクセル制御の追加
 
 現在のdefault設定では、TinyLiDARNetはステアリング制御のみを行い、[アクセルは固定値](https://github.com/AutomotiveAIChallenge/aichallenge-2025/blob/6706f4cb1bd3b1e50dc56e092ebd51ca174a3530/aichallenge/workspace/src/aichallenge_submit/tiny_lidar_net_controller/config/tiny_lidar_net_node.param.yaml#L12-L13)で制御しています。`control_mode: "ai"`に変更し、アクセル制御もTinyLiDARNetに実施させてみましょう。
+
 ### TinyLiDARNetでのOvertake
 
 単独走行であれば、ML Plannerを用いる必要性は低いですが、複数台走行の場合は、overtakeといった高度な意思決定が必要となり、機械学習の活躍場面が増えます。[複数台走行用のAWSIM](https://tier4inc-my.sharepoint.com/personal/taiki_tanaka_tier4_jp/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Ftaiki%5Ftanaka%5Ftier4%5Fjp%2FDocuments%2FAutonomousAIChallengePractice2026%2FE2ESimPractice&viewid=f55f657e%2D78ea%2D41f1%2D8ceb%2Da70ac2d24bfc&ga=1)を使用すれば、複数台走行データを収集・学習することができます。
