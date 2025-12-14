@@ -133,13 +133,13 @@ mv /aichallenge/python_workspace/tiny_lidar_net/weights/converted_weights.npy /a
 
 [`reference.launch.xml`におけるcontrol mode](https://github.com/AutomotiveAIChallenge/aichallenge-2025/blob/6706f4cb1bd3b1e50dc56e092ebd51ca174a3530/aichallenge/workspace/src/aichallenge_submit/aichallenge_submit_launch/launch/reference.launch.xml#L20)を、`rule_based`から`e2e`に変更しましょう。
 
-#### Terminal 1: AWSIMの起動
+### Terminal 1: AWSIMの起動
 
 ```sh
 cd /aichallenge/;./run_simulator.bash
 ```
 
-#### Terminal 2: autowareの起動
+### Terminal 2: autowareの起動
 
 ```sh
 cd /aichallenge/;./run_autoware.bash awsim
