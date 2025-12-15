@@ -148,6 +148,32 @@ blockquote p {
 
 ## Step 1: データ収集の実行例
 
+### 方法1: 手動運転での収集
+
+```bash
+# Terminal 1: Scan generation node
+ros2 launch laserscan_generator laserscan_generator.launch.xml \
+  use_sim_time:=true \
+  csv_path:=$(ros2 pkg prefix laserscan_generator)/share/laserscan_generator/map/lane.csv
+
+# Terminal 2: AWSIM起動
+./run_simulator.bash
+
+# Terminal 3: joycon接続
+ros2 launch teleop_manager teleop_manager.launch.xml
+
+# Terminal 4: ROSbag記録
+./record_rosbag.bash
+```
+
+**Tips**: 複数のシナリオ（アウトインアウト、インアウトインでのコーナリング）で収集
+
+---
+
+## Step 1: データ収集の実行例
+
+### 方法2: autowareでの収集
+
 ```bash
 # Terminal 1: Scan generation node
 ros2 launch laserscan_generator laserscan_generator.launch.xml \
@@ -164,7 +190,7 @@ ros2 launch laserscan_generator laserscan_generator.launch.xml \
 ./record_rosbag.bash
 ```
 
-**Tips**: 複数のシナリオ（アウトインアウト、インアウトインでのコーナリング）で収集
+**Tips**: autoware(Pure Pursuit)をうまくtuningして、安定した走行を実現する必要あり。[入門講座](https://automotiveaichallenge.github.io/aichallenge-documentation-2025/course/velocity_planning.html#02-04)を参考にtuningしてください。
 
 ---
 
